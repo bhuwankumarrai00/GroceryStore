@@ -22,7 +22,7 @@ a:hover {
 
 /* Header Styles */
 .header {
-    background: linear-gradient(to right, #56ab2f, #a8e063);
+    background: green;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -52,7 +52,6 @@ a:hover {
     font-size: 16px;
     padding: 10px 15px;
     border-radius: 5px;
-    transition: background 0.3s ease;
 }
 
 .header nav ul li a:hover {

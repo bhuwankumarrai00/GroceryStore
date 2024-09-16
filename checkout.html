@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Grocery Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <h1>Grocery Store Checkout</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Checkout Section -->
+    <section id="checkout-section">
+        <h2>Your Cart</h2>
+        <div class="checkout-container">
+            <!-- Cart Items -->
+            <div class="checkout-items">
+                <h3>Items in Your Cart</h3>
+                <ul id="checkout-items-list">
+                    <!-- Items will be dynamically added here -->
+                </ul>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="checkout-summary">
+                <h3>Order Summary</h3>
+                <p><strong>Total Amount:</strong> $<span id="checkout-total-price">0.00</span></p>
+                <button id="confirm-order-btn">Confirm Order</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Message -->
+    <div id="order-success-message" class="success-message hidden">
+        Order Placed Successfully! Thank you for your purchase.
+    </div>
+
+    <!-- Invoice Section -->
+    <section id="invoice-section" class="hidden">
+        <h3>Invoice</h3>
+        <p><strong>Order Summary:</strong></p>
+        <ul id="invoice-items-list"></ul>
+        <p><strong>Total Amount:</strong> $<span id="invoice-total"></span></p>
+        <button type="submit">Checkout</button>
+    </section>
+
+    <script src="checkout.js"></script>
+</body>
+</html>

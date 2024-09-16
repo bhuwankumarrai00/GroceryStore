@@ -3,47 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Grocery Store</title>
+    <title>Grocery Store - Home</title>
     <link rel="stylesheet" href="home.css">
 </head>
 <body>
+    <!-- Header Section -->
     <header class="header">
-        <h1>Welcome to Grocery Store</h1>
+        <h1>Welcome to Online Grocery Store</h1>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Cart</a></li>
+                <li><a href="#" id="view-details">View Your Details</a></li>
+                <li><a href="#" id="cart-icon">Cart <span id="cart-count" class="cart-badge">0</span></a></li>
+                <li><a href="#" id="logout">Logout</a></li>
             </ul>
         </nav>
     </header>
 
-    <div class="container">
-        <div id="success-message" class="success-message">Item has been successfully added to the cart!</div>
-        <!-- User Info Section -->
-        <section id="user-info">
-            <h2>User Details</h2>
-            <p><strong>Customer ID:</strong> <span id="user-id"></span></p>
-            <p><strong>Email:</strong> <span id="user-email"></span></p>
-            <button id="edit-user-btn">Edit Details</button>
+    <!-- Welcome Message -->
+    <div class="welcome">
+        <h2>Hello, <span id="user-name">[User Name]</span> to Online Grocery Store</h2>
+    </div>
 
-            <!-- Edit User Info Modal -->
-            <div id="edit-user-modal" class="modal">
-                <div class="modal-content">
-                    <h2>Edit Your Details</h2>
-                    <label for="edit-user-id">Customer ID:</label>
-                    <input type="text" id="edit-user-id" disabled>
-                    <label for="edit-user-email">Email:</label>
-                    <input type="email" id="edit-user-email">
-                    <button id="save-user-btn">Save Changes</button>
-                    <button id="close-modal-btn">Close</button>
-                </div>
+    <!-- Success Message -->
+    <div id="success-message" class="success-message hidden">Order Placed Successfully!</div>
+
+    <!-- Customer Details Section -->
+    <section id="user-details-section" class="hidden">
+        <h3>Your Details</h3>
+        <form id="update-details-form">
+            <label for="customer-id">Customer ID:</label>
+            <input type="text" id="customer-id" name="customerId" disabled>
+            
+            <label for="customer-name">Name:</label>
+            <input type="text" id="customer-name" name="customerName">
+            
+            <label for="customer-email">Email:</label>
+            <input type="email" id="customer-email" name="customerEmail">
+            
+            <button type="button" id="update-details-btn">Update</button>
+            <button type="button" id="save-details-btn" class="hidden">Save</button>
+        </form>
+    </section>
+
+    <!-- Cart Section -->
+    <section id="cart-section" class="hidden">
+        <h3>Your Cart</h3>
+        <div class="cart-content">
+            <!-- Left: Cart Items -->
+            <div class="cart-items">
+                <h4>Items in Cart</h4>
+                <ul id="cart-items-list"></ul>
             </div>
-        </section>
+            <!-- Right: Summary -->
+            <div class="cart-summary">
+                <h4>Summary</h4>
+                <ul id="cart-summary-list"></ul>
+                <p><strong>Total Amount:</strong> $<span id="total-price">0.00</span></p>
+                <button id="checkout-btn">Checkout</button>
+            </div>
+        </div>
+    </section>
 
-        <!-- Product Section -->
-        <section id="product-list">
-            <h2>Products</h2>
+    <!-- Product Section -->
+    <section id="product-list">
+        <h2>Products</h2>
+        <div class="product-grid">
             <div class="product" data-id="1" data-name="Apple" data-price="1.50">
                 <h3>Apple</h3>
                 <p>Price: $1.50</p>
@@ -59,15 +83,8 @@
                 <p>Price: $1.20</p>
                 <button class="add-to-cart">Add to Cart</button>
             </div>
-        </section>
-
-        <!-- Cart Section -->
-        <section id="cart">
-            <h2>Your Cart</h2>
-            <ul id="cart-items"></ul>
-            <p><strong>Total:</strong> $<span id="total-price">0.00</span></p>
-        </section>
-    </div>
+        </div>
+    </section>
 
     <script src="home.js"></script>
 </body>
